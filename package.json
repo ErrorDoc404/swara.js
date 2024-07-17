@@ -1,0 +1,42 @@
+{
+    "name": "swara.js",
+    "version": "1.0.0",
+    "description": "LavaLink wrapper",
+    "main": "dist/src/Swara.js",
+    "exports": {
+        ".": {
+            "require": "./dist/src/Swara.js"
+        }
+    },
+    "scripts": {
+        "build": "npm run build:ts && npm run build:docs",
+        "dev": "nodemon --watch src --exec ts-node --project tsconfig.json src/index.ts",
+        "build:ts": "tsup --config tsup-config.json",
+        "build:docs": "typedoc --theme default --readme README.md --out docs/ --entryPointStrategy expand src/.",
+        "lint": "eslint --fix --ext .ts",
+        "prepare": "npm run build:ts"
+    },
+    "author": "ErrorDoc404",
+    "license": "ISC",
+    "repository": {
+        "type": "git",
+        "url": "LavaLink wrapper"
+    },
+    "keywords": [
+        "discord",
+        "lavalink",
+        "music",
+        "wrapper"
+    ],
+    "dependencies": {
+        "ws": "^8.18.0"
+    },
+    "devDependencies": {
+        "@types/node": "^20.14.11",
+        "@types/node-fetch": "^2.6.11",
+        "@types/ws": "^8.5.11",
+        "ts-node": "^10.9.2",
+        "typedoc": "^0.26.4",
+        "typescript": "^5.5.3"
+    }
+}
